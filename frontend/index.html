@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FinSight - Cloud Cost Visualizer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>FinSight</h1>
+        <p>Cloud Cost Visualizer</p>
+    </header>
+
+    <main>
+
+        <section class="summary">
+            <div class="card">
+                <h2>今月のAWS料金</h2>
+                <p id="monthly-cost">$0.00</p>
+            </div>
+
+            <div class="card">
+                <h2>昨日のAWS料金</h2>
+                <p id="yesterday-cost">$0.00</p>
+            </div>
+
+            <div class="card">
+                <h2>前日比</h2>
+                <p id="daily-change">0%</p>
+            </div>
+        </section>
+
+
+        <section class="panel">
+            <h2>日別AWS料金推移</h2>
+
+            <div id="daily-cost">
+                データを読み込み中...
+            </div>
+        </section>
+
+
+        <section class="panel">
+            <h2>サービス別AWS料金</h2>
+
+            <div id="service-cost">
+                データを読み込み中...
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
