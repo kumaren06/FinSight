@@ -1,3 +1,4 @@
+import json
 import boto3
 from datetime import date
 
@@ -24,8 +25,11 @@ def lambda_handler(event, context):
 
     return {
         "statusCode": 200,
-        "body": {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "body": json.dumps({
             "monthlyCost": cost["Amount"],
             "unit": cost["Unit"]
-        }
+        })
     }
