@@ -62,3 +62,19 @@ costData.serviceCosts.forEach(item => {
 
     serviceCostArea.appendChild(row);
 });
+
+
+const API_URL = "https://rvfp1taiq1.execute-api.ap-northeast-1.amazonaws.com/cost";
+
+fetch(API_URL)
+    .then(response => response.json())
+    .then(data => {
+
+        const realMonthlyCost = parseFloat(data.monthlyCost);
+
+        document.getElementById("monthly-cost").textContent =
+            `$${realMonthlyCost.toFixed(2)}`;
+    })
+    .catch(error => {
+        console.error("Cost APIの取得に失敗しました:", error);
+    });
